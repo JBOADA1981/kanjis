@@ -1,0 +1,164 @@
+@font-face {
+    font-family: katana;
+    src: url("../fuentes/KATANA.ttf");
+
+}
+
+body {
+    background-color: #2c2c2c;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header h1 {
+    font-family: katana, fantasy;
+    font-size: 10em;
+    text-align: center;
+    background: radial-gradient(circle, red 0%, red 20%, white 30%);
+    background-clip: text;
+    /*para que el degradado aparezca solo dentro de las letras*/
+    color: transparent;
+    /* esto tambien es necesario para que funcione el degradado*/
+    text-shadow: 4px 4px 4px rgba(255, 251, 251, 0.515);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+}
+
+
+header nav {
+    display: flex;
+    /* Estas dos para poner los enlaces a la derecha*/
+    justify-content: end;
+    column-gap: 48px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 10px 5px 40px;
+    /*arribs dercha abajo izquierda*/
+    background-image: url("../imagenes/torii.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*Para que la imagen adapte su tamaño al del a*/
+
+}
+
+header nav a:hover {
+    color: red;
+    border-color: red;
+    background-image: url("../imagenes/torii_rojo.png");
+}
+
+.contenedorKanji {
+    display: flex;
+    gap: 1em;
+    /*margen entre filas y columnas*/
+    flex-wrap: wrap;
+    /*para que bajen las filas las que no quepan*/
+    justify-content: center;
+    margin-top: 50px;
+
+
+}
+
+.cajaKanji {
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1em;
+    width: 120px;
+    height: 120px;
+    border: red 3px solid;
+
+
+}
+
+.kanji {
+    border-bottom: 1px solid black;
+    font-size: 3em;
+
+}
+
+.cajaKanji:hover {
+    background-color: rgba(255, 255, 255, 0.739);
+    transform: scale(1.05);
+    transition: transform 8s;
+    box-shadow: 3px 3px 3px rgb(246, 246, 246);
+
+
+
+}
+
+.cajaKanji:hover .kanji {
+    color: red;
+    border-bottom: 3px solid red;
+}
+
+.cajaKanji:hover p {
+    color: red
+}
+
+#informacion {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    column-gap: 20px;
+}
+
+#informacion a {
+    color: white;
+    border: 2px solid red;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    /* ya quwe en los eñementos en lineas el padding superior e inferior no desplazan el contenido que haya alrededor*/
+    width: 50%;
+
+
+}
+
+#informacion a:nth-of-type(1) {
+    background-image: url("../imagenes/cultura.jpeg");
+}
+
+#informacion a:nth-of-type(2) {
+    background-image: url("../imagenes/geografia.jpg");
+}
+
+#informacion a:nth-of-type(3) {
+    background-image: url("../imagenes/historia.jpg");
+}
+
+#informacion span {
+    background-color: rgba(0, 0, 0, 0.741);
+    padding: 1em .7em;
+
+}
+
+#informacion a:hover {
+    transform: rotate(1deg);
+    transition: transform .2s;
+    filter: grayscale();
+}
+footer{
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+    font-size: 10px;
+    margin-top: 40px;/* En monitores de mas resolucion, verticales, si bajan el zoom,... el footer no queda debajo del todo. Una posible solución es la siguiente*/
+
+}
+body {
+    display: flex;/* por defecto el body solo llega hasta donde ocupe su contenido. Como queremos el abajo del todo, debemos hacer que ocupe todo el alto*/
+    height: 100vh;/*vh, es el alto de la ventana*/
+    flex-direction: column;
+    
+}
+main{
+    flex-grow: 1; /*Que ocupe todo el espacio sobrante para que el pie vaya debajo de todo*/
+}
